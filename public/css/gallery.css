@@ -12,12 +12,13 @@
 }
 
 body {
-	min-height: 100vh;
+	height: 100%;
 	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/header-background.jpg') center center no-repeat;
+	background-size: cover;
 	/* background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/header-background.jpg') center center no-repeat; */
 }
 
-.container {
+.mycontainer {
 	max-width: 100rem;
 	margin: 0 auto;
 	padding: 0 2rem 2rem;
@@ -74,4 +75,18 @@ body {
 	.gallery-item {
 		margin: 0;
 	}
+}
+
+.mypadding{
+	padding: 40px 150px;
+}
+
+.carousel-item img{
+	border-radius: 10px;
+}
+
+.card-flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -35,12 +35,8 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({}));
 app.use(flash());
-
-// uge5G5s4am7plr5q
-// application
-// const MONGO_URI = "mongodb://localhost:27017/ClubUser";
 const MONGO_URI =
-  "mongodb+srv://application:uge5G5s4am7plr5q@club-management.fngjg9c.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://lci2020015:gPR1OkYY28ZSvrcM@cluster0.9of41cg.mongodb.net/?";
 var store = new MongoDBStore({
   uri: MONGO_URI,
   collection: "sessions",
@@ -73,13 +69,13 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-server.listen("3000", () => {
-  console.log("Listening to port 3000");
-});
-})
-.catch((err) => {
-  console.log("OH NO error");
-});
+    server.listen("3000", () => {
+      console.log("Listening to port 3000");
+    });
+  })
+  .catch((err) => {
+    console.log("OH NO error");
+  });
 app.use(setLocale);
 
 app.get("/", (req, res) => {
@@ -108,11 +104,6 @@ app.post("/signup", async (req, res) => {
     if (user) {
       res.send("User already exists");
     }
-    // if (password != cpassword) {
-    //   req.flash("message", "Confirm Password does not match!");
-    //   return res.redirect("/signup");
-    // }
-
     const epasswd = password;
 
     const newUser = new User({
@@ -132,6 +123,7 @@ app.post("/login", async (req, res) => {
   var password = req.body.password;
 
   const database = await User.findOne({ email: email });
+  // console.log(databaseno)
 
   if (!database) {
     res.send("NO USER FOUND");
